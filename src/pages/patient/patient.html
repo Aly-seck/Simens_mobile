@@ -1,0 +1,47 @@
+<!--
+  Generated template for the Patient page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Patient</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+	<h4>Liste des patients</h4>
+  <table class="table">
+    <thead class="thead-inverse">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+	<ion-list style="background-color:  rgba(4,8,25,0.97)">
+	  <ion-item *ngFor="let patient of patients ">
+      <tr>
+        <th scope="row">1</th>
+        <td>
+          <ion-thumbnail item-start>
+            <ion-img  src="{{patient.picture}}"></ion-img>
+          </ion-thumbnail>
+          <h2>
+            <p>
+              {{patient.name}}
+            </p>
+          </h2>
+        </td>
+        <td>
+          <button ion-button clear item-end (click)="consulter(patient)">Consulter</button>
+        </td>
+      </tr>
+	  </ion-item>
+	</ion-list>
+    </tbody>
+  </table>
+</ion-content>
